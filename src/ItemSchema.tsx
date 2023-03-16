@@ -1,17 +1,19 @@
-import {BSON} from 'realm';
 
-export class Item extends Realm.Object<Item> {
-  _id!: BSON.ObjectId;
-  summary!: string;
-  owner_id!: string;
+import {Realm} from '@realm/react';
 
-  static schema: Realm.ObjectSchema = {
-    name: 'Muhthar',
+export class Item1 extends Realm.Object{
+    _id!: Realm.BSON.ObjectId;
+    summary!: string;
+    isComplete!: boolean;
+    owner_id!: string;
+
+  static schema = {
+    name: 'Item1',
     primaryKey: '_id',
     properties: {
-      // This allows us to automatically generate a unique _id for each Item
-      _id: {type: 'objectId', default: () => new BSON.ObjectId()},
+      _id: 'objectId',
       summary: 'string',
+      isComplete: {type: 'bool', default: false},
       owner_id: 'string',
     },
   };

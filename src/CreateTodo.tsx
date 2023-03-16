@@ -20,6 +20,7 @@ function CreateTodo(props:Props):React.ReactElement<Props> {
                 <TextInput
                     placeholder='task name'
                     onChangeText={setSummary}
+                    value={summary}
                     autoCapitalize="none"
                 />
                 <Pressable
